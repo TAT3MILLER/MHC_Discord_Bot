@@ -1,4 +1,4 @@
 .env
-LICENSE
-MHC.db
-discord.log
+/MHC.db
+*.log
+/LICENSE

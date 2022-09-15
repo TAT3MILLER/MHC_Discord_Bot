@@ -18,6 +18,7 @@ async def main():
     conn = sqlite3.connect('MHC.db')
     c = conn.cursor()
     c.execute("""CREATE TABLE IF NOT EXISTS absolute_garbage (
+        id INTEGER PRIMARY KEY,
         name TEXT,
         quote TEXT,
         defense TEXT,
@@ -25,6 +26,7 @@ async def main():
         )""")
         
     c.execute("""CREATE TABLE IF NOT EXISTS hall_of_fame (
+        id INTEGER PRIMARY KEY,
         name TEXT,
         quote TEXT,
         datetime timestamp
