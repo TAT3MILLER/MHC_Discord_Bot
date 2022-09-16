@@ -76,12 +76,9 @@ class Commands(commands.Cog):
         c = conn.cursor()
         c.execute("SELECT * FROM absolute_garbage")
         rows = c.fetchall()
-        e = discord.Embed(color=discord.Color.blurple(), description='Absolute Garbage \n')
         for row in rows:
             entry = row[1] + ': "' + row[2] + '"  Defense: "' + row[3] + '"  Said on: ' + row[4] + "\n"
-            e.description += entry
-            #await ctx.send(entry)
-        await ctx.send(embed=e)
+            await ctx.send(entry)
         conn.close()
 
     @commands.command()
